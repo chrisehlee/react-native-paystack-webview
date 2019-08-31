@@ -1,4 +1,4 @@
-# React-Native-Paystack-WebView
+# react-native-paystack-webview
 
 ![package in action](https://picasaweb.google.com/101819388491824070414/6731100653835510225#6731100658334156434)
 
