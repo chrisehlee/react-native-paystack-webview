@@ -28,13 +28,11 @@ class MyApp extends Component {
     return (
       <View style={{ flex: 1 }}>
         <PaystackWebView
-          buttonText="Pay Now"
           paystackKey="your key here"
           amount={120000}
           billingEmail="ayoshokz@gmail.com"
           billingMobile="08101274387"
           billingName="Oluwatobi Shokunbi"
-          ActivityIndicatorColor="green"
         />
       </View>
     );
