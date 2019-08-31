@@ -8,7 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/just1and0/React-Native-Paystack-WebView.git"
+    "url": "git+https://github.com/just1and0/react-native-paystack-webview.git"
+  },
+  "dependencies": {
+    "react-native-webview": "^7.0.1"
+  },
+  "peerDependencies": {
+    "react-native-webview": ">=7.0 <7.1"
   },
   "keywords": [
     "paystack",
@@ -21,7 +27,7 @@
   "author": "Oluwatobi Shokunbi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/just1and0/React-Native-Paystack-WebView/issues"
+    "url": "https://github.com/just1and0/react-native-paystack-webview/issues"
   },
-  "homepage": "https://github.com/just1and0/React-Native-Paystack-WebView#readme"
+  "homepage": "https://github.com/just1and0/react-native-paystack-webview#readme"
 }
