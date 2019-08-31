@@ -65,21 +65,15 @@ export default class Paystack extends Component {
     var webResponse = JSON.parse(data);
     switch (webResponse.event) {
       case "cancelled":
-        this.setState({ showModal: false }, () => {
-          this.props.onCancel();
-        });
+        this.props.onCancel();
         break;
 
       case "successful":
-        this.setState({ showModal: false }, () => {
-          this.props.onSuccess(webResponse.transactionRef);
-        });
+        this.props.onSuccess(webResponse.transactionRef);
         break;
 
       default:
-        this.setState({ showModal: false }, () => {
-          this.props.onCancel();
-        });
+        this.props.onCancel();
         break;
     }
   };
@@ -96,8 +90,6 @@ export default class Paystack extends Component {
           onMessage={e => {
             this.messageRecived(e.nativeEvent.data);
           }}
-          onLoadStart={() => this.setState({ isLoading: true })}
-          onLoadEnd={() => this.setState({ isLoading: false })}
         />
       </View>
     );
