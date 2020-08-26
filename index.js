@@ -13,12 +13,12 @@ export default class Paystack extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
     };
   }
 
   Paystack = {
-    html: `  
+    html: `
       <!DOCTYPE html>
       <html lang="en">
         <head>
@@ -31,7 +31,7 @@ export default class Paystack extends Component {
           <script type="text/javascript">
             window.onload = payWithPaystack;
             function payWithPaystack(){
-            var handler = PaystackPop.setup({ 
+            var handler = PaystackPop.setup({
               key: '${this.props.paystackKey}',
               email: '${this.props.billingEmail}',
               amount: ${this.props.amount}00,
@@ -55,13 +55,13 @@ export default class Paystack extends Component {
               });
               handler.openIframe();
             }
-          </script> 
+          </script>
         </body>
-      </html> 
-      `
+      </html>
+      `,
   };
 
-  messageRecived = data => {
+  messageRecived = (data) => {
     var webResponse = JSON.parse(data);
     switch (webResponse.event) {
       case "cancelled":
@@ -85,9 +85,10 @@ export default class Paystack extends Component {
           javaScriptEnabled={true}
           javaScriptEnabledAndroid={true}
           originWhitelist={["*"]}
-          ref={webView => (this.MyWebView = webView)}
+          ref={(webView) => (this.MyWebView = webView)}
           source={this.Paystack}
-          onMessage={e => {
+          useWebKit={true}
+          onMessage={(e) => {
             this.messageRecived(e.nativeEvent.data);
           }}
         />
@@ -97,5 +98,5 @@ export default class Paystack extends Component {
 }
 
 Paystack.defaultProps = {
-  amount: 10
+  amount: 10,
 };
